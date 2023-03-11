@@ -1,0 +1,250 @@
+html, body {
+box-sizing: border-box;
+height: 100%;
+width: 100%;
+font-family: 'Roboto Condensed', sans-serif;
+font-size: 14px;
+line-height: 1;
+}
+
+h1,h2,h3,h4,h5,h6 {
+font-weight: inherit;
+font-size: inherit;
+}
+img{
+    vertical-align: top;
+}
+* {
+margin: 0;
+padding: 0;
+border: 0;
+text-decoration: none;
+list-style: none;
+}
+
+
+.wrapper {
+    background: #333;
+    color: white;
+}
+
+.form {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.form * {
+    outline: none;
+}
+
+.form__body {
+  position: relative;
+}
+.form__body::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 110%;
+  height: 100%;
+  background: rgba(50, 50, 50, 0.9) url('../img/amalie-steiness.gif') center / 150px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s ease 0s;
+}
+
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form__item {
+    margin: 0 0 20px 0;
+}
+
+.form__label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form__input {
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+}
+
+
+.form__input._error {
+    box-shadow: 0 0 25px  #ff1e00;
+}
+
+.form__input:focus {
+    box-shadow: 0 0 25px #84a96c;
+}
+
+textarea.form__input {
+    min-height: 120px;
+    resize: vertical;
+    padding: 10px;
+}
+
+
+.options {
+    padding: 10px 0 0 0;
+}
+
+.options__item {
+    margin: 0 0 10px 0;
+}
+
+.options__input {
+    display: none;
+}
+.options__input:checked + .options__label::after {
+    transform: scale(1);
+}
+
+
+.options__label {
+    display: inline-flex;
+    font-size: 16px;
+    line-height: 140%;
+    align-items: center;
+    position: relative;
+}
+
+.options__label::before {
+   content: "";
+   align-self: flex-start;
+   flex: 0 0 24px;
+   height: 24px;
+   background-color: white;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+
+.options__label::after { 
+    transition: transform .5s ease 0s;
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    background: #7a956b;
+    border-radius: 50%;
+    transform: scale(0);
+}
+
+.file__item {
+    position: relative;
+}
+
+.file__input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-size: 0;
+    cursor: pointer;
+}
+
+
+.file__button {
+    display: inline-flex;
+    width: 100px;
+    min-height: 30px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #7a956b;
+    padding: 0 20px;
+}
+
+.file__preview {
+    display: inline-block;
+    max-width: 100%;
+    padding-top: 10px;
+}
+.file__preview img {
+  max-height: 150px;
+}
+
+.checkbox._error .checkbox__label::before {
+    box-shadow: 0 0 25px  #ff1e00;
+}
+
+
+
+.checkbox__input {
+    display: none;
+}
+
+.checkbox__input:checked + .checkbox__label::after {
+    transform: scale(1);
+}
+
+.checkbox__label {
+    font-size: 16px;
+    line-height: 140%;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox__label::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.checkbox__label::after {
+    transition: transform .5s ease 0s;
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background-color: #7a956b;
+    border-radius: 3px;
+    transform: scale(0);
+}
+
+
+.form__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    min-height: 60px;
+    background-color: #7a956b;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 0 #141812;
+    padding-top: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    top: 0%;
+}
+.form__button:hover {
+    background-color: #53654a;
+}
+.form__button:active {
+    top: 3px;
+    box-shadow: 0 2px 0 #141812;
+}
